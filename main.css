@@ -4,5 +4,36 @@
 	background-repeat: no-repeat;
  	background-position: center;
   	background-size: contain;
+  	background-color: White;
 }
 
+.clickable
+{
+    cursor: pointer;
+}
+
+.panel{
+	height: 200px;
+}
+
+.btn{
+
+	margin-top: 20px;
+	position: center;
+    padding: 20px 40px;
+    font-size: 22px;
+    line-height: normal;
+    -webkit-border-radius: 8px;
+       -moz-border-radius: 8px;
+            border-radius: 8px;
+}
+
+.well{
+	text-align: left;
+	font-size: 22px;
+	vertical-align: center;
+	background-color: Orange;
+	border-color: Navy;
+	color: Navy;
+	box-shadow: 5px 5px 5px #888888;
+}

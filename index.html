@@ -6,26 +6,166 @@
     </head>
 
     <body>
+
+    	<!-- DrySmart Page Header -->
     	<div class="jumbotron"></div>
+
+    	<!-- Monitoring -->
     	<div class="container">
 	    	<div class = "row">
-	    		<div class = "col-xs-6">
-	    			<h2>Blower Speed: </h2>
-	    			<h2>Furnace Temperature: </h2>
-	    			<h2>Fuel Level: </h2>
+	    		<!--Blower Speed Well -->
+	    		<div class = "col-xs-4">
+	    			<div class = "well">
+	    				<div class = "col-xs-9">
+	    					<h4>Blower Speed: </h4>
+	    				</div>
+	    				<div class = "col-xs-3">
+	    					<h2>10</h2>
+	    				</div>
+	    			</div>
+	    			<!--Furnace Temp Well -->
+	    			<div class = "well">
+	    				<div class = "col-xs-9">
+	    					<h4>Furnace Temp: </h4>
+	    				</div>
+	    				<div class = "col-xs-3">
+	    					<h2>250&deg</h2>
+	    				</div>
+	    			</div>
 	    		</div>
-	    		<div class = "col-xs-6">
-	    			<h2>Home Temperature: </h2>
-	    			<h2>Home Humidity: </h2>
+
+	    		<!--Fuel Level Well-->
+	    		<div class = "col-xs-4">
+	    			<div class = "well">
+	    				<div class = "col-xs-9">
+	    					<h4>Fuel Level: 64%</h4>
+	    				</div>
+	    				<!--<div class = "col-xs-3">-->
+	    					
+	    				<!--</div>-->
+	    			</div>
+	    		</div>
+
+	    		<!--House Temp Well -->
+	    		<div class = "col-xs-4">
+	    			<div class = "well">
+	    				<div class = "col-xs-9">
+	    					<h4>Home Temp: </h4>
+	    				</div>
+	    				<div class = "col-xs-3">
+	    					<h2>120&deg</h2>
+	    				</div>
+	    			</div>
+	    			<div class = "well">
+	    				<div class = "col-xs-9">
+	    					<h4>Home Humidity: </h4>
+	    				</div>
+	    				<div class = "col-xs-3">
+	    					<h2>94%</h2>
+	    				</div>
+	    			</div>
 	    		</div>
 	    	</div>
-    	</div>
+	    </div>
+
+    	<!-- Using Forms -->
     	<div class="container">
-    		<div class="row">
-    			<div class="col-xs-6">
-					<button type="button" class="btn btn-primary">Manual</button>
-				</div>
-				<div class="col-xs-6">
-					<button type="button" class="btn btn-primary">Modulation</button>
-				</div>
+
+    	<!-- Panel 1: Manual Mode -->	
+    	<div class="col-xs-6">
+    		<div class = "panel panel-default">
+			    <div class = "panel-heading clickable">		    
+			    	<h4>Manual Mode</h4>
+			    </div>	   
+			    <div class = "panel-body">
+			    	<div class = "col-xs-6">
+			    		<h5>SET BLOWER SPEED: </h5>						
+					</div>
+					<div class = "col-xs-2">
+						<!-- Need to add a variable and some JS here -->
+			    		<h1>10</h1>						
+					</div>
+					<div class="col-xs-2">
+
+						<!--Up Button-->
+						<button type="button" class="arrowbtn btn-default" aria-label="Right Align">
+  							<span class="glyphicon glyphicon-arrow-up" ></span>
+						</button>
+
+						<!-- Down Button -->					
+						<button type="button" class="arrowbtn btn-default" aria-label="Right Align">
+	  						<span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
+						</button>
+						
+					</div>
+		   		</div>
 			</div>
+    	</div>
+
+    	<!-- Panel 2: Modulation Mode -->
+    	<div class="col-xs-6">
+    		<div class = "panel panel-default">
+			    <div class = "panel-heading clickable">
+			      	<h4>Modulation Mode</h4>
+			    </div>
+			   
+			    <div class = "panel-body">
+
+			    	<!-- Text Entry Form-->
+			    	<form class = "form-horizontal" role = "form"> 
+					    <div class = "form-group">
+					       <label for = "set_temp" class = "col-xs-5 control-label">SET TEMP</label>					
+					       	<div class = "col-xs-5">
+					          <input type = "text" class = "form-control" id = "set_temp" placeholder = "Enter Set Temperature">
+					       </div>
+					    </div>
+					</form>
+
+		   		</div>
+			</div>
+    	</div>
+
+    	<div class="container">
+	    	<!-- Start Button -->		
+	    	<div class='col-xs-3'>	
+				<button type="button" class="btn btn-success">Start</button>
+			</div>
+
+			<!-- Start Button -->		
+	    	<div class='col-xs-3'>	
+				<button type="button" class="btn btn-danger">Stop</button>
+			</div>
+
+
+	    	<!-- Refresh Button -->		
+	    	<div class='col-xs-3'>	
+				<button type="button" class="btn btn-info">Refresh</button>
+			</div>
+
+			<!-- Send Button -->		
+	    	<div class='col-xs-3'>	
+				<button type="button" class="btn btn-primary">Send</button>
+			</div>
+		</div>
+
+		
+
+
+		</div>
+
+    	
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
