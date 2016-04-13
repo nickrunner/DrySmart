@@ -12,9 +12,33 @@
     cursor: pointer;
 }
 
-.panel{
-	height: 200px;
+.panel > .panel-heading {
+    background-color: #2e4a9e;
+    color: white;
 }
+
+.panel{
+	position: center;
+	height: 200px;
+	border-color: Black;
+	border-width: 1px;
+	box-shadow: 5px 5px 5px #888888;
+}
+
+.modmode{
+	opacity: 0.5
+}
+
+
+.alert{
+	text-align: center;
+}
+
+.radio{
+	/*text-align: center;*/
+	position: center;
+}
+
 
 .btn{
 
@@ -29,11 +53,43 @@
 }
 
 .well{
-	text-align: left;
-	font-size: 22px;
-	vertical-align: center;
-	background-color: Orange;
-	border-color: Navy;
+	position: center;
+	text-align: center;
+	background-color: #e0e0d1;
+	border-color: #2e4a9e;
 	color: Navy;
-	box-shadow: 5px 5px 5px #888888;
+	opacity: 0.9;
+	/*box-shadow: 5px 5px 5px #888888;*/
+}
+
+.tex{
+	font-weight: bold;
+	font-size: 20px;
+	color: Black;
+}
+
+.val{
+	font-weight: bold;
+	font-size: 25px;
+	color: Navy;
+}
+
+.bspeed{
+	font-size: 40px;
+	color: Navy;
+}
+
+.glyphicon{
+	color: Navy;
+}
+
+.arrowbtn{
+	color: Orange;
+}
+
+h5{
+	font-size: 15px;
+	font-weight: bold;
+	text-align: center;
+	padding-top: 10px; 
 }
