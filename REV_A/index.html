@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="bootstrap.css">
+    	<link rel="stylesheet" href="main.css">
+
+		<script src="jquery-2.2.3.js"></script>
+		<script type='text/javascript' src="script.js"></script>
+	
+
+    </head>
+
+    <body>
+
+    	<!-- DrySmart Page Header -->
+    	<div class="jumbotron"></div>
+
+    	<!-- Monitoring -->
+    	<div class="container">
+	    	<div class = "row">
+	    		<!--Blower Speed Well -->
+	    		<div class = "col-xs-4">
+	    			<div class = "well" id="bspeed_well">
+	    				<span class = "tex">Blower Speed: </span>
+	    				<span class = "val" id="bspeed_data">10</span>
+	    				
+	    			</div>
+	    			<!--Furnace Temp Well -->
+	    			<div class = "well" id="f_temp_well">
+	    				<span class = "tex">Furnace Temp: </span>
+	    				<span class = "val" id="ftemp_data">250&deg</span>
+	    			</div>
+	    		</div>
+
+	    		<!--Fuel Level Well-->
+	    		<div class = "col-xs-4" id="fuel_level_well">
+	    			<div class = "well">
+	    				<span class = "tex">Fuel Level: </span>
+	    				<span class = "val" id="fuel_level_data">64%</span>
+	    			</div>
+		    			<!-- Status Notification goes here -->
+					<div class = "alert alert-danger">This is a sample WARNING status</div>
+				</div>
+	    		
+	    		<!--Structure Temp Well -->
+	    		<div class = "col-xs-4" id="s_temp_well">
+	    			<div class = "well">
+	    				<span class = "tex">Structure Temp: </span>
+	    				<span class = "val" id="stemp_data">121&deg</span>
+	    			</div>
+	    			<!-- House Humidity -->
+	    			<div class = "well" id="humidity_well">
+	    				<span class = "tex">Structure Humidity: </span>
+	    				<span class = "val" id="humidity_data">95%</span>
+	    		</div>
+	    	</div>
+	    </div>
+
+    	
+    	<div class="container">
+
+    	<!-- Panel 1: Manual Mode -->	
+    	<div class="col-xs-6">
+    		<div class = "panel panel-default" id="manmode">
+			    <div class = "panel-heading clickable">		    
+			    	<h4>Manual Mode</h4>
+			    </div>	   
+			    <div class = "panel-body">
+			    	<div class = "col-xs-6">
+			    		<h5>SET BLOWER SPEED</h5>						
+					</div>
+					<div class = "col-xs-3">
+						<!-- Need to add a variable and some JS here -->
+			    		<span id="bspeed">0 </span>						
+					</div>
+					<div class="col-xs-2">
+						<!--Up Button-->
+						<button type="button" id="up_arrow" class="arrowbtn btn-default" aria-label="Right Align">
+  							<span class="glyphicon glyphicon-arrow-up" ></span>
+						</button>
+						<!-- Down Button -->					
+						<button type="button" id="down_arrow" class="arrowbtn btn-default" aria-label="Right Align">
+	  						<span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
+						</button>		
+					</div>
+		   		</div>
+			</div>
+    	</div>
+
+    	<!-- Panel 2: Modulation Mode -->
+    	<div class="col-xs-6">
+    		<div class = "panel panel-default" id="modmode">
+			    <div class = "panel-heading clickable">
+			      	<h4>Modulation Mode</h4>
+			    </div>
+			   
+			    <div class = "panel-body">
+
+			    	<!-- Text Entry Form-->
+			    	<div class="radio">
+  						<label><input type="radio" name="optradio">FURNACE MODULATION</label>
+					</div>
+					<div class="radio">
+						<label><input type="radio" name="optradio">BLOWER MODULATION</label>
+					</div>
+			    	<form class = "form-horizontal" role = "form"> 
+					    <div class = "form-group">
+					       <label for = "set_temp" class = "col-xs-5 control-label">SET TEMP</label>					
+					       	<div class = "col-xs-5">
+					          <input type = "text" class = "form-control" id = "set_temp" placeholder = "Enter Set Temperature">
+					       </div>
+					    </div>
+					</form>
+
+		   		</div>
+			</div>
+    	</div>
+
+    	<div class="container">
+	    	<!-- Start Button -->		
+	    	<div class='col-xs-3'>	
+				<button type="button" id="start_btn" class="btn btn-success">Start</button>
+			</div>
+
+			<!-- Start Button -->		
+	    	<div class='col-xs-3'>	
+				<button type="button" id="stop_btn" class="btn btn-danger">Stop</button>
+			</div>
+
+
+	    	<!-- Refresh Button -->		
+	    	<div class='col-xs-3'>	
+				<button type="button" id="refresh_btn" class="btn btn-info">Refresh</button>
+			</div>
+
+			<!-- Send Button -->		
+	    	<div class='col-xs-3'>	
+				<button type="button" id="send_btn" class="btn btn-primary">Send</button>
+			</div>
+		</div>
+
+		
+
+
+		</div>
+
+
+
+    	
+	</body>
+
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

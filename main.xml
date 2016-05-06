@@ -1,0 +1,85 @@
+<hmi>
+
+	<item>
+		<id>send_btn</id>
+		<read ad="send_state" />
+		<set ad="send_state" />
+	</item>
+
+	<item>
+		<id>refresh_btn</id>
+		<read ad="refresh_state" />
+		<set ad="refresh_state" />
+	</item>
+
+	<item>
+		<id>start_btn</id>
+		<read ad="start_state" />
+		<set ad="start_state" />
+	</item>
+
+	<item>
+		<id>stop_btn</id>
+		<on value="1" />
+		<off value="1" />
+		<read ad="stop_state" />
+		<set ad="stop_state" />
+	</item>
+
+	<item>
+		<id>ftemp_data</id>
+		<read ad="ftemp" />
+		<set ad="ftemp" />
+		<value>121</value>
+	</item>
+
+	<item>
+		<id>stemp_data</id>
+		<read ad="stemp" />
+		<set ad="stemp" />
+		<value>0</value>
+	</item>
+
+	<item>
+		<id>fuel_level_data</id>
+		<read ad="fuel_level" />
+		<set ad="fuel_level" />
+		<value>12</value>
+	</item>
+
+	<item>
+		<id>humidity_data</id>
+		<read ad="humidity" />
+		<set ad="humidity" />
+		<value>67</value>
+	</item>
+
+	<item>
+		<id>blower_speed</id>
+		<read ad="blower_speed" />
+		<set ad="blower_speed" />
+		<value>6</value>
+	</item>
+
+	<item>
+		<id>set_temp</id>
+		<read ad="set_temp" />
+		<set ad="set_temp" />
+		<value>122</value>
+	</item>
+
+	<item>
+		<id>mode</id>
+		<read ad="mode" />
+		<set ad="mode" />
+		<value>mod</value>
+	</item>
+
+	<item>
+		<id>mod_mode</id>
+		<read ad="mod_mode" />
+		<set ad="mod_mode" />
+		<value>blower</value>
+	</item>
+
+</hmi>
