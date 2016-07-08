@@ -11,12 +11,12 @@ var mode = "mod";
 var mod_mode = "blower";
 
 //AJAX XML file parsing
-/*function pull_data(){
+function pull_data(){
 
 	//Gather Data from main.xml and store into variables
 	$.ajax({
 		type: "GET",
-		url: "main.xml",
+		url: "static/main.xml",
 		//dataType: "xml",
 		async: false,
 		cache: false,
@@ -81,7 +81,7 @@ function push_data(){
 			alert("AJAX failed: "+ data.status + ' ' + data.statusText);
 		}
 	});
-}*/
+}
 
 //Function that enables the correct panel based on what mode we are in
 function enable_mode(){

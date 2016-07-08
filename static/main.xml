@@ -30,49 +30,49 @@
 		<id>ftemp_data</id>
 		<read ad="ftemp" />
 		<set ad="ftemp" />
-		<value>149</value>
+		<value>134</value>
 	</item>
 
 	<item>
 		<id>stemp_data</id>
 		<read ad="stemp" />
 		<set ad="stemp" />
-		<value>139</value>
+		<value>140</value>
 	</item>
 
 	<item>
 		<id>fuel_level_data</id>
 		<read ad="fuel_level" />
 		<set ad="fuel_level" />
-		<value>53</value>
+		<value>1</value>
 	</item>
 
 	<item>
 		<id>humidity_data</id>
 		<read ad="humidity" />
 		<set ad="humidity" />
-		<value>41</value>
+		<value>-24</value>
 	</item>
 
 	<item>
 		<id>blower_speed</id>
 		<read ad="blower_speed" />
 		<set ad="blower_speed" />
-		<value>6</value>
+		<value>4</value>
 	</item>
 
 	<item>
 		<id>set_temp</id>
 		<read ad="set_temp" />
 		<set ad="set_temp" />
-		<value>150</value>
+		<value />
 	</item>
 
 	<item>
 		<id>mode</id>
 		<read ad="mode" />
 		<set ad="mode" />
-		<value>mod</value>
+		<value>man</value>
 	</item>
 
 	<item>

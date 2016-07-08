@@ -1,0 +1,112 @@
+<hmi>
+
+	<item>
+		<id class ="button">send_btn</id>
+		<type>button</type>
+		<img></img>
+		<on value="1" />
+		<off value="1" />
+		<read ad="send_state" />
+		<set ad="send_state" />
+	</item>
+
+	<item>
+		<id class ="button">refresh_btn</id>
+		<type>button</type>
+		<img></img>
+		<on value="1" />
+		<off value="1" />
+		<read ad="refresh_state" />
+		<set ad="refresh_state" />
+	</item>
+
+	<item>
+		<id class ="button">start_btn</id>
+		<type>button</type>
+		<img></img>
+		<on value="1" />
+		<off value="1" />
+		<read ad="start_state" />
+		<set ad="start_state" />
+	</item>
+
+	<item>
+		<id class ="button">stop_btn</id>
+		<type>button</type>
+		<img></img>
+		<on value="1" />
+		<off value="1" />
+		<read ad="stop_state" />
+		<set ad="stop_state" />
+	</item>
+
+	<item>
+		<id class ="button">e_stop</id>
+		<type>button</type>
+		<img></img>
+		<on value="1" />
+		<off value="1" />
+		<read ad="e_stop_state" />
+		<set ad="e_stop_state" />
+	</item>
+
+	<item>
+		<id class="ftemp_data"</id>
+		<name>Furnace Temperature</name>
+		<type>value</type>
+		<format>numeric</format>
+		<read ad="ftemp" />
+	</item>
+
+	<item>
+		<id class="stemp_data"</id>
+		<name>Structure Temperature</name>
+		<type>value</type>
+		<format>numeric</format>
+		<read ad="stemp" />
+	</item>
+
+	<item>
+		<id class="fuel_level_data"</id>
+		<name>Fuel Level</name>
+		<type>value</type>
+		<format>numeric</format>
+		<read ad="fuel_level" />
+	</item>
+
+	<item>
+		<id class="humidity_data"</id>
+		<name>Humidity</name>
+		<type>value</type>
+		<format>numeric</format>
+		<read ad="humidity" />
+	</item>
+
+	<item>
+		<id class="bspeed_data"</id>
+		<name>Humidity</name>
+		<type>value</type>
+		<format>numeric</format>
+		<read ad="blower_speed" />
+		<set ad="blower_speed" />
+	</item>
+
+	<item>
+		<id class="set_temp"</id>
+		<name>Furnace Set Temperature</name>
+		<type>value</type>
+		<format>numeric</format>
+		<read ad="set_temp" />
+		<set ad="set_temp" />
+	</item>
+
+	<item>
+		<id class="mode"</id>
+		<name>Mode of Operation</name>
+		<type>value</type>
+		<format>numeric</format>
+		<read ad="mode" />
+		<set ad="mode" />
+	</item>
+
+</hmi>
