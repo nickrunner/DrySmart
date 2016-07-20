@@ -15,12 +15,13 @@
 .panel > .panel-heading {
     background-color: #2e4a9e;
     color: white;
-    height: 50px;
+    height: 60px;
+    padding-bottom: 5px;
 }
 
 .panel{
 	position: center;
-	height: 150px;
+	height: 250px;
 	border-color: Black;
 	border-width: 1px;
 	box-shadow: 5px 5px 5px #888888;
@@ -48,12 +49,13 @@
 
 	margin-top: 20px;
 	position: center;
-    padding: 5px 10px;
-    font-size: 15px;
+    padding: 20px 40px;
+    font-size: 50px;
     line-height: normal;
     -webkit-border-radius: 8px;
        -moz-border-radius: 8px;
             border-radius: 8px;
+    text-align: center;
 }
 
 .well{
@@ -69,44 +71,46 @@
 
 .tex{
 	font-weight: bold;
-	font-size: 10px;
+	font-size: 30px;
 	color: Black;
 }
 
 .val{
 	font-weight: bold;
-	font-size: 15px;
+	font-size: 45px;
 	color: Navy;
 }
 
 .panel_val{
-	font-size: 20px;
+	font-size: 60px;
 	color: Navy;
 	margin-bottom: 10px;
 	font-weight: bold;
 	text-align: center;
 }
 
-.arrowbtn{
-	width: 30px;
-	text-align: center;
-	vertical-align: top;
-	
-}
-
 .glyphicon{
 	color: Navy;
+	font-size: 5.2em;
+}
+
+.arrowbtn{
+	color: Orange;
+	text-align: center;
+	vertical-align: top;
+	height: 100px
+}
+
+h5{
+	font-size: 30px;
+	font-weight: bold;
 	text-align: center;
 }
 
-
-
-
-h5{
-	font-size: 15px;
-	font-weight: bold;
-	text-align: center;
-	padding-top: 10px; 
+h4{
+	font-size: 35px;
+	padding-bottom: 10px;
+	vertical-align: center;
 }
 
 p{
@@ -119,6 +123,11 @@ p{
 	padding: 5px 10px;
 	position: right;
 	margin-left: 80px;
+	font-size: 20px;
+}
+
+#e_stop{
+	font-size: 20px;
 }
 
 #modal_btn{
@@ -129,7 +138,7 @@ p{
 #notifier{
 	color: Black;
 	font-weight: bold;
-	font-size: 10px;
+	font-size: 25px;
 }
 
 #smart_mode_data{

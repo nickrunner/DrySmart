@@ -58,7 +58,7 @@
 		<id>blower_speed</id>
 		<read ad="blower_speed" />
 		<set ad="blower_speed" />
-		<value>4</value>
+		<value>10</value>
 	</item>
 
 	<item>

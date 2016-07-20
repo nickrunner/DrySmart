@@ -1,0 +1,8 @@
+scp -oKexAlgorithms=+diffie-hellman-group1-sha1 index.html root@192.168.1.100:/var/www/DrySmart
+
+
+ scp -oKexAlgorithms=+diffie-hellman-group1-sha1 -r static root@192.168.1.100:/var/www/DrySmart
+
+ scp -oKexAlgorithms=+diffie-hellman-group1-sha1 -r templates root@192.168.1.100:/var/www/DrySmart
+
+  ssh -oKexAlgorithms=+diffie-hellman-group1-sha1 root@192.168.1.100

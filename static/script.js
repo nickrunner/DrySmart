@@ -6,17 +6,64 @@ var f_temp=0;
 var fuel_level=0;
 var s_temp=0;
 var humidity=0;
-var set_temp=0;
 var mode = "mod";
 var mod_mode = "blower";
+var max_blower_speed = 10;
+var max_furnace_temp = 300;
+var cutoff_temp = 300;
+var mouseDown = 0;
+var inc_time = 1000;
+
+var users =[];
+
+
+//User Object Declaration
+/*var user ={
+	email,
+	pn
+};*/
+
+//User Object Constructer
+function user(email, pn){
+	this.email = email;
+	this.pn = pn;
+	this.add = function(email, pn){
+		//users.push(this.email);
+		alert("Added user");
+	};
+	this.remove = function(email, pn){
+		/*int i = 0;
+		for(i=0; i<users.length; i++){
+			if(users[i].email == this.email){
+				users.splice(i, 1);
+			}
+		}*/
+		alert("Removed User");
+	};
+	this.edit = function(email, pn){
+		this.email = email;
+		this.pn = pn;
+		alert("Edited user")
+	};
+}
+
+
+function pull_data(){
+	bspeed = $("#bspeed_data").val();
+	set_temp = $("#set_temp").val();
+	f_temp = $("#ftemp_data").val();
+	fuel_level = $("#fuel_level_data").val();
+	s_temp = $("#set_temp").val();
+	humidity = $("#humidity_data").val();
+}
 
 //AJAX XML file parsing
-/*function pull_data(){
+function pull_data(){
 
 	//Gather Data from main.xml and store into variables
 	$.ajax({
 		type: "GET",
-		url: "main.xml",
+		url: "static/main.xml",
 		//dataType: "xml",
 		async: false,
 		cache: false,
@@ -81,7 +128,7 @@ function push_data(){
 			alert("AJAX failed: "+ data.status + ' ' + data.statusText);
 		}
 	});
-}*/
+}
 
 //Function that enables the correct panel based on what mode we are in
 function enable_mode(){
@@ -147,6 +194,39 @@ function check_alarm_states(){
 		}
 }
 
+//MouseHold Plugin
+jQuery.fn.mousehold = function(timeout, f) {
+	if (timeout && typeof timeout == 'function') {
+		f = timeout;
+		timeout = 100;
+	}
+	if (f && typeof f == 'function') {
+		var timer = 0;
+		var fireStep = 0;
+		return this.each(function() {
+			jQuery(this).mousedown(function() {
+				fireStep = 1;
+				var ctr = 0;
+				var t = this;
+				timer = setInterval(function() {
+					ctr++;
+					f.call(t, ctr);
+					fireStep = 2;
+				}, timeout);
+			})
+
+			clearMousehold = function() {
+				clearInterval(timer);
+				if (fireStep == 1) f.call(this, 1);
+				fireStep = 0;
+			}
+			
+			jQuery(this).mouseout(clearMousehold);
+			jQuery(this).mouseup(clearMousehold);
+		})
+	}
+}
+
 $(document).ready(function(){
 
 	
@@ -171,21 +251,56 @@ $(document).ready(function(){
 		enable_mode();
 	});
 
-	//Click Up Arrow
-	$("#up_arrow").click(function(){
-		if(bspeed<10){
+	//Click Blower Up Arrow
+	$("#blower_up_arrow").click(function(){
+		if(bspeed<max_blower_speed){
 			bspeed++;
 		}
 		$("#bspeed").text(bspeed);
 	});
 
-	//Click Down Arrow
-	$("#down_arrow").click(function(){
+
+	//Click Blower Down Arrow
+	$("#blower_down_arrow").click(function(){
 		if(bspeed>0){
 			bspeed--;
 		}
 		$("#bspeed").text(bspeed);
-	});
+	}, inc_time);
+
+	//Click cutoff Up Arrow
+	$("#cutoff_up_arrow").mousehold(function(){
+		if(cutoff_temp<max_furnace_temp){
+			cutoff_temp++;
+		}
+		$("#cutoff_temp").text(cutoff_temp+("\u00B0"));
+	}, inc_time);
+
+
+	//Click cutoff down Arrow
+	$("#cutoff_down_arrow").mousehold(function(){
+		if(cutoff_temp>0){
+			cutoff_temp--;
+		}
+		$("#cutoff_temp").text(cutoff_temp+("\u00B0"));
+	}, inc_time);
+
+	//Click target Up Arrow
+	$("#target_up_arrow").mousehold(function(){
+		if(set_temp<max_furnace_temp){
+			set_temp++;
+		}
+		$("#set_temp").text(set_temp+("\u00B0"));
+	}, inc_time);
+
+	//Click target down Arrow
+	$("#target_down_arrow").mousehold(function(){
+		if(set_temp>0){
+			set_temp--;
+		}
+		$("#set_temp").text(set_temp+("\u00B0"));
+	}, inc_time);
+
 
 	//Click Start Button
 	$("#start_btn").click(function(){
@@ -214,6 +329,55 @@ $(document).ready(function(){
 			push_data();
 		}
 	});	
+
+	//Click Add User Submit Button
+	$("#submit_user").click(function(){
+		new_user = new user($("#emailInput").text(), $("#phoneInput".text()))
+		users.push(new_user);
+		alert("New User Added!");
+	});	
+
+	//Click Remove user 1 button
+	$("#user1_remove").click(function(){
+		users.splice(1, 1);
+		alert("User 1 Removed");
+	});	
+
+	//Click Remove user 2 button
+	$("#user2_remove").click(function(){
+		users.splice(2, 1);
+	});
+
+	//Click Remove user 3 button
+	$("#user3_remove").click(function(){
+		users.splice(3, 1);
+	});
+
+	//Click Remove user 4 button
+	$("#user4_remove").click(function(){
+		users.splice(4, 1);
+	});
+
+	//Click edit user 1 button
+	$("#user1_edit").click(function(){
+
+	});	
+
+	//Click edit user 2 button
+	$("#user2_edit").click(function(){
+
+	});
+
+	//Click edit user 3 button
+	$("#user3_edit").click(function(){
+
+	});
+
+	//Click edit user 4 button
+	$("#user4_edit").click(function(){
+
+	});
+
 
 	//Hover-over bspeed
 	$("#bspeed_well").mouseenter(function(){
@@ -274,6 +438,11 @@ $(document).ready(function(){
 	$("#humidity_well").mouseenter(function(){
 		$("#notifier").html("Normal Humidity");
 		$("#notifier").css({"background-color": "#00e64d"});
+	});
+
+	//Add User "Submit" button
+	$("#send_btn").click(function(){
+
 	});
 
 	//Refresh Function

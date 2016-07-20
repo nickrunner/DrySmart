@@ -1,112 +1,133 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
 <hmi>
 
 	<item>
-		<id class ="button">send_btn</id>
+		<id class="submit">submitter</id>
+		<name>Submit Values</name>
+		<type>submit</type>
+	</item>
+
+	<item>
+		<id class="button">refresh_btn</id>
 		<type>button</type>
 		<img></img>
 		<on value="1" />
 		<off value="1" />
-		<read ad="send_state" />
-		<set ad="send_state" />
+		<read ad="Refresh" />
+		<set ad="Refresh" />
 	</item>
 
 	<item>
-		<id class ="button">refresh_btn</id>
+		<id class="button">start_btn</id>
+		<type>button</type>
+		<img>images/start.PNG</img>
+		<on value="1">images/start.PNG</on>
+		<off value="1">images/start.PNG</off>
+		<read ad="Start" />
+		<set ad="Start" />
+	</item>
+
+	<item>
+		<id class="button">stop_btn</id>
 		<type>button</type>
 		<img></img>
 		<on value="1" />
 		<off value="1" />
-		<read ad="refresh_state" />
-		<set ad="refresh_state" />
+		<read ad="Stop" />
+		<set ad="Stop" />
 	</item>
 
 	<item>
-		<id class ="button">start_btn</id>
+		<id class="button">e_stop</id>
 		<type>button</type>
 		<img></img>
 		<on value="1" />
 		<off value="1" />
-		<read ad="start_state" />
-		<set ad="start_state" />
+		<read ad="Estop" />
+		<set ad="Estop" />
 	</item>
 
 	<item>
-		<id class ="button">stop_btn</id>
-		<type>button</type>
-		<img></img>
-		<on value="1" />
-		<off value="1" />
-		<read ad="stop_state" />
-		<set ad="stop_state" />
-	</item>
-
-	<item>
-		<id class ="button">e_stop</id>
-		<type>button</type>
-		<img></img>
-		<on value="1" />
-		<off value="1" />
-		<read ad="e_stop_state" />
-		<set ad="e_stop_state" />
-	</item>
-
-	<item>
-		<id class="ftemp_data"</id>
-		<name>Furnace Temperature</name>
-		<type>value</type>
-		<format>numeric</format>
-		<read ad="ftemp" />
-	</item>
-
-	<item>
-		<id class="stemp_data"</id>
-		<name>Structure Temperature</name>
-		<type>value</type>
-		<format>numeric</format>
-		<read ad="stemp" />
-	</item>
-
-	<item>
-		<id class="fuel_level_data"</id>
-		<name>Fuel Level</name>
-		<type>value</type>
-		<format>numeric</format>
-		<read ad="fuel_level" />
-	</item>
-
-	<item>
-		<id class="humidity_data"</id>
-		<name>Humidity</name>
-		<type>value</type>
-		<format>numeric</format>
-		<read ad="humidity" />
-	</item>
-
-	<item>
-		<id class="bspeed_data"</id>
-		<name>Humidity</name>
-		<type>value</type>
-		<format>numeric</format>
-		<read ad="blower_speed" />
-		<set ad="blower_speed" />
-	</item>
-
-	<item>
-		<id class="set_temp"</id>
-		<name>Furnace Set Temperature</name>
-		<type>value</type>
-		<format>numeric</format>
-		<read ad="set_temp" />
-		<set ad="set_temp" />
-	</item>
-
-	<item>
-		<id class="mode"</id>
+		<id class="input">mode</id>
 		<name>Mode of Operation</name>
 		<type>value</type>
 		<format>numeric</format>
 		<read ad="mode" />
 		<set ad="mode" />
+		<command>NoChange</command>
+	</item>
+
+	<item>
+		<id class="input">cutoff_temp</id>
+		<name>Manual mode cutoff temp</name>
+		<type>value</type>
+		<format>numeric</format>
+		<read ad="FurnaceCutoffTemp" />
+		<set ad="FurnaceCutoffTemp" />
+		<command>NoChange</command>
+	</item>
+
+	<item>
+		<id class="input">set_temp</id>
+		<name>Target Output Air Temperature</name>
+		<type>value</type>
+		<format>numeric</format>
+		<read ad="TargetAirTemp" />
+		<set ad="TargetAirTemp" />
+		<command>NoChange</command>
+
+	</item>
+
+	<item>
+		<id class="input">bspeed</id>
+		<name>Blower Speed Input to PLC</name>
+		<type>value</type>
+		<format>numeric</format>
+		<read ad="TWD_Blower_Speed" />
+		<set ad="TWD_BlowerSpeed" />
+		<command>NoChange</command>
+	</item>
+
+
+	<item>
+		<id class="output">ftemp_data</id>
+		<name>Furnace Temperature</name>
+		<type>value</type>
+		<format>numeric</format>
+		<read ad="TWD_FurnTemp" />
+	</item>
+
+	<item>
+		<id class="output">stemp_data</id>
+		<name>Structure Temperature</name>
+		<type>value</type>
+		<format>numeric</format>
+		<read ad="TWD_StructureTemp" />
+	</item>
+
+	<item>
+		<id class="output">fuel_level_data</id>
+		<name>Fuel Level</name>
+		<type>value</type>
+		<format>numeric</format>
+		<read ad="TWD_FuelLevel" />
+	</item>
+
+	<item>
+		<id class="output">humidity_data</id>
+		<name>Humidity</name>
+		<type>value</type>
+		<format>numeric</format>
+		<read ad="TWD_StructPercentH" />
+	</item>
+
+	<item>
+		<id class="output">bspeed_data</id>
+		<name>Blower Speed Output</name>
+		<type>value</type>
+		<format>numeric</format>
+		<read ad="TWD_BlowerSpeed" />
 	</item>
 
 </hmi>

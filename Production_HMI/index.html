@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 	<head>
+
+
 		<link rel="stylesheet" href="static/bootstrap.css">
     	<link rel="stylesheet" href="static/main.css">
 
@@ -14,15 +16,17 @@
 			}
 		</script>
 	
+		<title>DrySmart Control Interface</title>
 
     </head>
 
-    <body>
+    <body refresh="1000">
+
     	 <!-- DrySmart Page Header -->
     	<div class="jumbotron">
 	    	<!--Configurations Dropdown-->
 	    	<div class= "row">
-	    		<div class = "col-xs-2"
+	    		<div class = "col-xs-2">
 			    	<div class="dropdown">
 			    		<button type = "button" class = "btn dropdown-toggle" id='configMenu' data-toggle="dropdown">
 			    			<span class="glyphicon glyphicon-cog" ></span>
@@ -33,16 +37,15 @@
 			    				<a role="menuitem" tabindex="-1" href="#" id="user_config_btn" data-toggle="modal" data-target="#userConfigModal">Add User</a>
 			    			</li>
 			    			<li role = "presentation">
+			    				<a role="menuitem" tabindex="-1" href="#" id="user_config_btn" data-toggle="modal" data-target="#removeUserModal">Edit/Remove User</a>
+			    			</li>
+			    			<li role = "presentation">
 			    				<a role="menuitem" tabindex="-1" href="#"id="alarm_config_btn" data-toggle="modal" data-target="#alarmConfigModal">Alarm Settings</a>
 			    			</li>
 			    		</ul>
 			    	</div>
-	    	<!-- E-Stop Button -->		
-		    	<div class='col-xs-9'>	
-					<button type="button" id="e_stop" class="btn btn-danger pull-right">EMERGENCY STOP</button>
-				</div>
+			    </div>
 			</div>
-
     	</div>
   
 
@@ -80,7 +83,101 @@
                 	<button type="button" id="modal_btn" class="btn btn-default" data-dismiss="modal">
                             Close
                 	</button>
-	                <button type="button" id="modal_btn" class="btn btn-primary">
+	                <button type="button" id="submit_user" class="btn btn-primary">
+	                    Submit
+	                </button>
+	            </div>
+	        </div>
+	    </div>
+	    </div>
+
+
+	    <!--Edit/Remove User Modal -->
+    	<div class="modal fade" id="removeUserModal" tabindex="-1" role="dialog"
+    		aria-labelledby="myModalLabel" aria-hidden="true">
+    		<div class="modal-dialog">
+    			<div class="modal-content">
+    			<!--Modal Header-->
+    			<div class ="modal-header" id="modalHeader">
+    				<button type="button" class="close" 
+                   		data-dismiss="modal">
+                       <span aria-hidden="true">&times;</span>
+                       <span class="sr-only">Close</span>
+                	</button>
+                	<h4 class="modal-title" id="myModalLabel">
+                   		Edit/Remove User
+                	</h4>
+                </div>
+                <!--Modal Body-->
+                <div class="modal-body">
+                	<table class = "table table-striped">
+                		<caption>Current Users</caption>
+                		<thead>
+                			<tr>
+                				<th>Email</th>
+                				<th>Phone #</th>
+                				<th>Action</th>
+                			</tr>
+                		</thead>
+                		<tbody>
+                			<tr>
+                				<td>test1@gmail.com</td>
+                				<td>(555)-681-3441</td>
+                				<td>
+                					<button type="button" id="user1_edit" class="btn btn-warning">
+					                    Edit
+					                </button>
+					                <button type="button" id="user1_remove" class="btn btn-danger">
+					                    Remove
+					                </button>
+                				</td>
+                			</tr>
+                			<tr>
+                				<td>test2@gmail.com</td>
+                				<td>(555)-634-1341</td>
+                				<td>
+                					<button type="button" id="user2_edit" class="btn btn-warning">
+					                    Edit
+					                </button>
+					                <button type="button" id="user2_remove" class="btn btn-danger">
+					                    Remove
+					                </button>
+                				</td>
+                			</tr>
+                			<tr>
+                				<td>test3@gmail.com</td>
+                				<td>(555)-251-7241</td>
+                				<td>
+                					<button type="button" id="user3_edit" class="btn btn-warning">
+					                    Edit
+					                </button>
+					                <button type="button" id="user3_remove" class="btn btn-danger">
+					                    Remove
+					                </button>
+                				</td>
+                			</tr>
+                			<tr>
+                				<td>test4@gmail.com</td>
+                				<td>(555)-551-2355</td>
+                				<td>
+                					<button type="button" id="user4_edit" class="btn btn-warning">
+					                    Edit
+					                </button>
+					                <button type="button" id="user4_remove" class="btn btn-danger">
+					                    Remove
+					                </button>
+                				</td>
+                			</tr>
+
+                		</tbody>
+                	</table>
+                </div>
+                <!--Modal Footer-->
+                <div class="modal-footer">
+                	<button type="button" id="modal_btn" class="btn btn-default" data-dismiss="modal">
+                            Close
+                	</button>
+	                <button type="button" id="submit_user" class="btn btn-primary">
 	                    Submit
 	                </button>
 	            </div>
@@ -137,7 +234,7 @@
                 	<button type="button" id="modal_btn" class="btn btn-default" data-dismiss="modal">
                         Close
                 	</button>
-	                <button type="button" id="modal_btn" class="btn btn-primary">
+	                <button type="button" id="submit_alarm" class="btn btn-primary">
 	                    Submit
 	                </button>
 	            </div>
@@ -154,13 +251,13 @@
 	    		<div class = "col-xs-4">
 	    			<div class = "well" id="bspeed_well">
 	    				<span class = "tex" id="bspeed_text">Blower Speed: </span>
-	    				<span class = "val" id="bspeed_data"></span>
+	    				<span class = "val" id="bspeed_data">0</span>
 	    				
 	    			</div>
 	    			<!--Furnace Temp Well -->
 	    			<div class = "well" id="f_temp_well">
-	    				<span class = "tex" id="ftemp_text">Furnace Temp: </span>
-	    				<span class = "val" id="ftemp_data"></span>
+	    				<span class = "tex" id="ftemp_text">Output Air Temp: </span>
+	    				<span class = "val" id="ftemp_data">0</span>
 	    			</div>
 	    		</div>
 
@@ -168,7 +265,7 @@
 	    		<div class = "col-xs-4" id="fuel_level_well">
 	    			<div class = "well">
 	    				<span class = "tex" id="fuel_level_text">Fuel Level: </span>
-	    				<span class = "val" id="fuel_level_data"></span>
+	    				<span class = "val" id="fuel_level_data">0</span>
 	    			</div>
 		    			<!-- Status Notification goes here -->
 					<div class = "well" id="notifier">
@@ -181,12 +278,12 @@
 	    		<div class = "col-xs-4" id="s_temp_well">
 	    			<div class = "well">
 	    				<span class = "tex" id="stemp_text">Structure Temp: </span>
-	    				<span class = "val" id="stemp_data"></span>
+	    				<span class = "val" id="stemp_data">0</span>
 	    			</div>
 	    			<!-- House Humidity -->
 	    			<div class = "well" id="humidity_well">
 	    				<span class = "tex">Humidity: </span>
-	    				<span class = "val" id="humidity_data"></span>
+	    				<span class = "val" id="humidity_data">0</span>
 	    		</div>
 	    	</div>
 	    </div>
@@ -194,70 +291,85 @@
     	<div class="container">
 
     	<!-- Panel 1: Manual Mode -->	
+    	<div class="row">
     	<div class="col-xs-6">
     		<div class = "panel panel-default centering" id="manmode">
 			    <div class = "panel-heading clickable">		    
-			    	<h4>Manual Mode</h4>
+			    	<h4>Manual Mode     
+			    		<a id="info"href="#" data-toggle="popover" title="Manual Mode" data-content="This is how Manual Mode works"><span class="glyphicon glyphicon-info-sign" ></span></a>
+			    	</h4>
+
 			    </div>	   
+			    <div class = "panel-body">		    	
+				    	<div class = "row" id="title_row">
+				    		<div class="col-xs-6"><h5>BLOWER SPEED</h5></div>						
+				    		<div class="col-xs-6"><h5>CUTOFF TEMPERATURE</h5></div>					
+						</div>
+						<div class = "row" id="data_row">
+							<div class = "col-xs-6">
+					    		<span class="panel_val" id="bspeed">0 </span>						
+							
+								<!--Up Button-->
+								<button type="button" id="blower_up_arrow" class="arrowbtn btn-default" aria-label="Right Align">
+		  							<span class="glyphicon glyphicon-arrow-up" ></span>
+								</button>
+								<!-- Down Button -->					
+								<button type="button" id="blower_down_arrow" class="arrowbtn btn-default" aria-label="Right Align">
+			  						<span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
+								</button>		
+							</div>
+							<div class = "col-xs-6">
+					    		<span class="panel_val" id="cutoff_temp"></span>						
+							
+								<!--Up Button-->
+								<button type="button" id="cutoff_up_arrow" class="arrowbtn btn-default" aria-label="Right Align">
+		  							<span class="glyphicon glyphicon-arrow-up" ></span>
+								</button>
+								<!-- Down Button -->					
+								<button type="button" id="cutoff_down_arrow" class="arrowbtn btn-default" aria-label="Right Align">
+			  						<span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
+								</button>		
+							</div>
+						</div>
+		   		</div>
+			</div>
+    	</div>
+
+
+    	<!-- Panel 2: Smart Mode -->
+    	<div class="col-xs-6">
+    		<div class = "panel panel-default centering" id="modmode">
+			    <div class = "panel-heading clickable">
+			      	<h4>Smart Mode
+			      		<a id="info"href="#" data-toggle="popover" title="Smart Mode" data-content="This is how Smart Mode works"><span class="glyphicon glyphicon-info-sign" ></span></a></h4>
+			    </div>
+			   
 			    <div class = "panel-body">
-			    	<div class = "col-xs-6">
-			    		<h5>SET BLOWER SPEED</h5>						
-					</div>
-					<div class = "col-xs-3">
-						<!-- Need to add a variable and some JS here -->
-			    		<span id="bspeed">0 </span>						
-					</div>
-					<div class="col-xs-2">
+			    	<div class = "row">
+				    	<h5>TARGET AIR TEMPERATURE</h5>												
+			    		<span class="panel_val" id="set_temp">0&deg</span>						
 						<!--Up Button-->
-						<button type="button" id="up_arrow" class="arrowbtn btn-default" aria-label="Right Align">
+						<button type="button" id="target_up_arrow" class="arrowbtn btn-default" aria-label="Right Align">
   							<span class="glyphicon glyphicon-arrow-up" ></span>
 						</button>
 						<!-- Down Button -->					
-						<button type="button" id="down_arrow" class="arrowbtn btn-default" aria-label="Right Align">
+						<button type="button" id="target_down_arrow" class="arrowbtn btn-default" aria-label="Right Align">
 	  						<span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
 						</button>		
 					</div>
 		   		</div>
 			</div>
     	</div>
-
-    	<!-- Panel 2: Modulation Mode -->
-    	<div class="col-xs-6">
-    		<div class = "panel panel-default centering" id="modmode">
-			    <div class = "panel-heading clickable">
-			      	<h4>Modulation Mode</h4>
-			    </div>
-			   
-			    <div class = "panel-body">
-
-			    	<!-- Text Entry Form-->
-			    	<!--<div class="radio">
-  						<label><input type="radio" name="optradio">FURNACE MODULATION</label>
-					</div>
-					<div class="radio">
-						<label><input type="radio" name="optradio">BLOWER MODULATION</label>
-					</div>-->
-			    	<form class = "form-horizontal" role = "form"> 
-					    <div class = "form-group">
-					       <label for = "set_temp" class = "col-xs-5 control-label">SET TEMP</label>					
-					       	<div class = "col-xs-5">
-					          <input type = "text" class = "form-control" id = "set_temp" placeholder = "Enter Set Temperature">
-					       </div>
-					    </div>
-					</form>
-
-		   		</div>
-			</div>
     	</div>
     	</div>
 
     	<div class="container">
-	    	<!-- Start Button -->		
+	    	<!-- Start Button -->				
 	    	<div class='col-xs-3'>	
 				<button type="button" id="start_btn"  class="btn btn-success center-block">Start</button>
 			</div>
 
-			<!-- Start Button -->		
+			<!-- Stop Button -->		
 	    	<div class='col-xs-3'>	
 				<button type="button" id="stop_btn"  class="btn btn-warning center-block">Shutdown</button>
 			</div>
@@ -270,18 +382,33 @@
 
 			<!-- Send Button -->		
 	    	<div class='col-xs-3'>	
-				<button type="button" id="send_btn" class="btn btn-primary center-block">Send</button>
+				<button type="button" id="send_btn" class="btn btn-primary center-block">Submit</button>
 			</div>
 
 			
 		</div>
+
+		<!-- E-Stop Button -->		
+		    	<div class='col-xs-8'>	
+					<button type="button" id="e_stop" class="btn btn-danger pull-right">EMERGENCY STOP</button>
+		</div>
+
+
+		<script>
+		$(document).ready(function(){
+		    $('[data-toggle="popover"]').popover();
+		});
+		</script>
+
+		
+
+		
 
     	
 	</body>
 
 
 </html>
-
 
 
 
