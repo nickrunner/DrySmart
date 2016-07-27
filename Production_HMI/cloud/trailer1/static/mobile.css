@@ -1,6 +1,6 @@
 .jumbotron{
 	background-image:url('images/logo.png');
-	height: 150px;
+	height: 50px;
 	background-repeat: no-repeat;
  	background-position: center;
   	background-size: contain;
@@ -25,7 +25,6 @@
 	border-color: Black;
 	border-width: 1px;
 	box-shadow: 5px 5px 5px #888888;
-	margin-top: 50px;
 }
 
 .panel > .panel-body{
@@ -124,77 +123,24 @@ p{
 	padding: 5px 10px;
 	position: right;
 	margin-left: 80px;
-	font-size: 15px;
-	margin-bottom: 20px;
-}
-
-.dropdown-menu{
-	font-size: 50px;
+	font-size: 20px;
 }
 
 #e_stop{
-	font-size: 35px;
+	font-size: 20px;
 }
 
-
+#modal_btn{
+	padding: 5px 20px;
+	font-size: 20px;
+}
 
 #notifier{
 	color: Black;
 	font-weight: bold;
-	font-size:25px;
+	font-size: 25px;
 }
 
 #smart_mode_data{
 	text-align: center;
-}
-
-
-.popover{
-	color: Black;
-}
-
-#info{
-	color: White;
-	padding-left: 35px; 
-}
-
-#clear_users{
-	padding: 5px 20px;
-	font-size: 35px;
-}
-
-#estop_message1{
-	text-align: center;
-	font-weight: bold;
-	color: Red;
-}
-
-#estop_message2{
-	text-align: center;
-}
-
-#cancel_estop_btn{
-	padding: 5px 20px;
-	font-size: 35px;
-}
-
-#continue_estop_btn{
-	padding: 5px 20px;
-	font-size: 35px;
-}
-
-.modal{
-	font-size: 40px;
-}
-
-.carrier{
-	margin-top: 57px;
-}
-
-.close{
-	font-size: 25px;
-}
-
-.form-control{
-	font-size: 25px;
 }

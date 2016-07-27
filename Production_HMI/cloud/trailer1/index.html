@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+
+		<link rel="stylesheet" href="static/bootstrap.css">
+    	<link rel="stylesheet" href="static/main.css">
+
+		<script src="static/jquery-2.2.3.js"></script>
+		<script type='text/javascript' src="static/script.js"></script>
+		<script src="static/bootstrap.min.js"></script>
+
+		<script type="text/javascript">		  
+			if (screen.width <= 500) {
+			    window.location = "mobile.html";
+			}
+		</script>
+	
+		<title>DrySmart Control Interface</title>
+
+    </head>
+
+    <body refresh="1000">
+
+    	 <!-- DrySmart Page Header -->
+    	<div class="jumbotron">
+	    	<!--Configurations Dropdown-->
+	    	<div class= "row">
+	    		<div class = "col-xs-2">
+			    	<div class="dropdown">
+			    		<button type = "button" class = "btn dropdown-toggle" id='configMenu' data-toggle="dropdown">
+			    			<span class="glyphicon glyphicon-cog" ></span>
+			    			<span class = "caret"></span>
+			    		</button>
+			    		<ul class = "dropdown-menu" role = "menu" aria-labelledby = "configMenu">			    		
+			    			<li role = "presentation">
+			    				<a role="menuitem" tabindex="-1" href="#" id="user_config_btn" data-toggle="modal" data-target="#removeUserModal">Configure Users</a>
+			    			</li>
+			    			<li role = "presentation">
+			    				<a role="menuitem" tabindex="-1" href="#"id="alarm_config_btn" data-toggle="modal" data-target="#alarmConfigModal">Alarm Settings</a>
+			    			</li>
+			    		</ul>
+			    	</div>
+			    </div>
+			</div>
+    	</div>
+ 
+
+
+	    <!--User Configurations Modal -->
+    	<div class="modal fade" id="removeUserModal" tabindex="-1" role="dialog"
+    		aria-labelledby="myModalLabel" aria-hidden="true">
+    		<div class="modal-dialog">
+    			<div class="modal-content">
+    			<!--Modal Header-->
+    			<div class ="modal-header" id="modalHeader">
+    				<button type="button" class="close" 
+                   		data-dismiss="modal">
+                       <span aria-hidden="true">&times;</span>
+                       <span class="sr-only">Close</span>
+                	</button>
+                	<h4 class="modal-title" id="myModalLabel">
+                   		Configure Users
+                	</h4>
+                </div>
+                <!--Modal Body-->
+                <div class="modal-body">
+                	<table class = "table table-striped">
+                		<thead>
+                			<tr>
+                				<th>Email</th>
+                				<th>Phone #</th>
+                				<th>Carrier</th>
+                			</tr>
+                		</thead>
+                		<tbody>
+
+                		<!-- User A -->
+                			<tr>
+                				<td><div class ="form-group">
+		                			<label for="emailInput"></label>
+		                			<input type="email" class="form-control" id="email_a" placeholder ="Enter email"/>
+		                		</div></td>
+                				<td><div class ="form-group">
+		                			<label for="phoneInput"></label>
+		                			<input type="text" class="form-control" id="pn_a" placeholder ="Enter Phone Number"/>
+		                		</div></td>
+		                		<td>
+		                			<div class="form-group">
+		                				<select class ="form-control" id="carrier_a">
+		                					<option>Select Carrier</option>
+		                					<option>AT&T</option>
+		                					<option>Verizon</option>
+		                					<option>Sprint</option>
+		                					<option>T-Mobile</option>
+		                					<option>US Cellular</option>
+		                					<option>Virgin USA</option>
+		                					<option>Boost Mobile</option>
+		                				</select>
+		                			</div>
+		                		</td>
+		                		<td>
+		                			<button type="button" id="clear_btn_a"class="close"> 
+				                       <span aria-hidden="true">&times;</span>
+				                       <span class="sr-only">Close</span>
+				                	</button>
+				                </td>             
+                			</tr>
+
+                		<!-- User B -->	
+                			<tr>
+                				<td><div class ="form-group">
+		                			<label for="emailInput"></label>
+		                			<input type="email" class="form-control" id="email_b" placeholder ="Enter email"/>
+		                		</div></td>
+                				<td><div class ="form-group">
+		                			<label for="phoneInput"></label>
+		                			<input type="text" class="form-control" id="pn_b" placeholder ="Enter Phone Number"/>
+		                		</div></td>
+		                		<td>
+		                			<div class="form-group">
+		                				<select class ="form-control" id="carrier_b">
+		                					<option>Select Carrier</option>
+		                					<option>AT&T</option>
+		                					<option>Verizon</option>
+		                					<option>Sprint</option>
+		                					<option>T-Mobile</option>
+		                					<option>US Cellular</option>
+		                					<option>Virgin USA</option>
+		                					<option>Boost Mobile</option>
+		                				</select>
+		                			</div>
+		                		</td>
+		                		<td>
+		                			<button type="button" id="clear_btn_b"class="close"> 
+				                       <span aria-hidden="true">&times;</span>
+				                       <span class="sr-only">Close</span>
+				                	</button>
+				                </td>            
+                			</tr>
+
+                		<!-- User C -->
+                			<tr>
+                				<td><div class ="form-group">
+		                			<label for="emailInput"></label>
+		                			<input type="email" class="form-control" id="email_c" placeholder ="Enter email"/>
+		                		</div></td>
+                				<td><div class ="form-group">
+		                			<label for="phoneInput"></label>
+		                			<input type="text" class="form-control" id="pn_c" placeholder ="Enter Phone Number"/>
+		                		</div></td>
+								<td>
+		                			<div class="form-group">
+		                				<select class ="form-control" id="carrier_c">
+		                					<option>Select Carrier</option>
+		                					<option>AT&T</option>
+		                					<option>Verizon</option>
+		                					<option>Sprint</option>
+		                					<option>T-Mobile</option>
+		                					<option>US Cellular</option>
+		                					<option>Virgin USA</option>
+		                					<option>Boost Mobile</option>
+		                				</select>
+		                			</div>
+		                		</td>
+		                		<td>
+		                			<button type="button" id="clear_btn_c"class="close"> 
+				                       <span aria-hidden="true">&times;</span>
+				                       <span class="sr-only">Close</span>
+				                	</button>
+				                </td>            
+                			</tr>
+
+                		<!-- User D -->
+                			<tr>
+                				<td><div class ="form-group">
+		                			<label for="emailInput"></label>
+		                			<input type="email" class="form-control" id="email_d" placeholder ="Enter email"/>
+		                		</div></td>
+                				<td><div class ="form-group">
+		                			<label for="phoneInput"></label>
+		                			<input type="text" class="form-control" id="pn_d" placeholder ="Enter Phone Number"/>
+		                		</div></td>
+								<td>
+		                			<div class="form-group">
+		                				<select class ="form-control" id="carrier_d">
+		                					<option>Select Carrier</option>
+		                					<option>AT&T</option>
+		                					<option>Verizon</option>
+		                					<option>Sprint</option>
+		                					<option>T-Mobile</option>
+		                					<option>US Cellular</option>
+		                					<option>Virgin USA</option>
+		                					<option>Boost Mobile</option>
+		                				</select>
+		                			</div>
+		                		</td>
+		                		<td>
+		                			<button type="button" id="clear_btn_d"class="close"> 
+				                       <span aria-hidden="true">&times;</span>
+				                       <span class="sr-only">Close</span>
+				                	</button>
+				                </td>             
+                			</tr>
+                		</tbody>
+                	</table>
+           			<button type="button" id="clear_users" class="btn btn-warning">
+                            Clear All
+                	</button>
+                </div>
+
+                <!--Modal Footer-->
+                <div class="modal-footer">
+                	
+                	<button type="button" id="modal_btn" class="btn btn-default" data-dismiss="modal">
+                            Close
+                	</button>
+	                <button type="button" id="submit_user" class="btn btn-primary">
+	                    Submit
+	                </button>
+	            </div>
+	        </div>
+	    </div>
+	    </div>
+
+
+
+    	<!--Alarm Configurations Modal -->
+    	<div class="modal fade" id="alarmConfigModal" tabindex="-1" role="dialog"
+    		aria-labelledby="myModalLabel" aria-hidden="true">
+    		<div class="modal-dialog">
+    			<div class="modal-content">
+    			<!--Modal Header-->
+    			<div class ="modal-header" id="modalHeader">
+    				<button type="button" class="close" 
+                   		data-dismiss="modal">
+                       <span aria-hidden="true">&times;</span>
+                       <span class="sr-only">Close</span>
+                	</button>
+                	<h4 class="modal-title" id="myModalLabel">
+                   		Alarm Configuration
+                	</h4>
+                </div>
+                <!--Modal Body-->
+                <div class="modal-body">
+                	<form role="form">
+                		<div class ="form-group">
+                			<label for="structTempAlarm">Structure Temperature Range</label>
+                			<div class = "row">
+	                			<div class = "col-xs-2">
+		                			<input type="text" class="form-control" id="st_input_min" placeholder ="Min &deg"/>
+		                		</div>
+	                			<div class = "col-xs-1"><p>  -</p></div>
+	                			<div class ="col-xs-2">	
+	                				<input type="text" class="form-control" id="st_input_max" placeholder ="Max &deg"/>
+	                			</div>
+	                		</div>
+                		</div>
+                		<div class ="form-group">
+                			<label for="fuelAlarm">Fuel Alarm Percentage</label>
+                			<div class = "row">
+	                			<div class = "col-xs-3">
+	                				<input type="text" class="form-control" id="fuelAlarm" placeholder ="Fuel Level"/>
+	                			</div>
+	                			<div class = "col-xs-2"><p>%</p></div>
+	                		</div>
+                		</div>
+                	</form>
+                </div>
+                <!--Modal Footer-->
+                <div class="modal-footer">
+                	<button type="button" id="modal_btn" class="btn btn-default" data-dismiss="modal">
+                        Close
+                	</button>
+	                <button type="button" id="submit_alarm" class="btn btn-primary">
+	                    Submit
+	                </button>
+	            </div>
+	        </div>
+	    </div>
+	    </div>
+
+	   
+
+    	<!-- Sensor Data Wells -->
+    	<div class="container">
+	    	<div class = "row">
+	    		<!--Blower Speed Well -->
+	    		<div class = "col-xs-4">
+	    			<div class = "well" id="bspeed_well">
+	    				<span class = "tex" id="bspeed_text">Blower Speed: </span>
+	    				<span class = "val" id="bspeed_data">0</span>
+	    				
+	    			</div>
+	    			<!--Furnace Temp Well -->
+	    			<div class = "well" id="f_temp_well">
+	    				<span class = "tex" id="ftemp_text">Output Air Temp: </span>
+	    				<span class = "val" id="ftemp_data">0&deg</span>
+	    			</div>
+	    		</div>
+
+	    		<!--Fuel Level Well-->
+	    		<div class = "col-xs-4" id="fuel_level_well">
+	    			<div class = "well">
+	    				<span class = "tex" id="fuel_level_text">Fuel Level: </span>
+	    				<span class = "val" id="fuel_level_data">0%</span>
+	    			</div>
+		    			<!-- Status Notification goes here -->
+					<div class = "well" id="notifier">
+						<span id = "info"></span>
+					</div>
+
+				</div>
+	    		
+	    		<!--Structure Temp Well -->
+	    		<div class = "col-xs-4" id="s_temp_well">
+	    			<div class = "well">
+	    				<span class = "tex" id="stemp_text">Structure Temp: </span>
+	    				<span class = "val" id="stemp_data">0&deg</span>
+	    			</div>
+	    			<!-- House Humidity -->
+	    			<div class = "well" id="humidity_well">
+	    				<span class = "tex">Structure Humidity: </span>
+	    				<span class = "val" id="humidity_data">0%</span>
+	    		</div>
+	    	</div>
+	    </div>
+    	
+    	<div class="container">
+
+    	<!-- Panel 1: Manual Mode -->	
+    	<div class="row">
+    	<div class="col-xs-6">
+    		<div class = "panel panel-default centering" id="manmode">
+			    <div class = "panel-heading clickable">		    
+			    	<h4>Manual Mode     
+			    		<a id="info"href="#" data-toggle="popover" title="Manual Mode" data-content="This is how Manual Mode works"><span class="glyphicon glyphicon-info-sign" ></span></a>
+			    	</h4>
+
+			    </div>	   
+			    <div class = "panel-body">		    	
+				    	<div class = "row" id="title_row">
+				    		<div class="col-xs-6"><h5>TARGET BLOWER SPEED</h5></div>						
+				    		<div class="col-xs-6"><h5>CUTOFF TEMPERATURE</h5></div>					
+						</div>
+						<div class = "row" id="data_row">
+							<div class = "col-xs-6">
+					    		<span class="panel_val" id="bspeed">0 </span>						
+							
+								<!--Up Button-->
+								<button type="button" id="blower_up_arrow" class="arrowbtn btn-default" aria-label="Right Align">
+		  							<span class="glyphicon glyphicon-arrow-up" ></span>
+								</button>
+								<!-- Down Button -->					
+								<button type="button" id="blower_down_arrow" class="arrowbtn btn-default" aria-label="Right Align">
+			  						<span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
+								</button>		
+							</div>
+							<div class = "col-xs-6">
+					    		<span class="panel_val" id="cutoff_temp">300&deg</span>						
+							
+								<!--Up Button-->
+								<button type="button" id="cutoff_up_arrow" class="arrowbtn btn-default" aria-label="Right Align">
+		  							<span class="glyphicon glyphicon-arrow-up" ></span>
+								</button>
+								<!-- Down Button -->					
+								<button type="button" id="cutoff_down_arrow" class="arrowbtn btn-default" aria-label="Right Align">
+			  						<span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
+								</button>		
+							</div>
+						</div>
+		   		</div>
+			</div>
+    	</div>
+
+
+    	<!-- Panel 2: Smart Mode -->
+    	<div class="col-xs-6">
+    		<div class = "panel panel-default centering" id="modmode">
+			    <div class = "panel-heading clickable">
+			      	<h4>Smart Mode
+			      		<a id="info"href="#" data-toggle="popover" title="Smart Mode" data-content="This is how Smart Mode works"><span class="glyphicon glyphicon-info-sign" ></span></a></h4>
+			    </div>
+			   
+			    <div class = "panel-body">
+			    	<div class = "row">
+				    	<h5>TARGET AIR TEMPERATURE</h5>												
+			    		<span class="panel_val" id="set_temp">200&deg</span>						
+						<!--Up Button-->
+						<button type="button" id="target_up_arrow" class="arrowbtn btn-default" aria-label="Right Align">
+  							<span class="glyphicon glyphicon-arrow-up" ></span>
+						</button>
+						<!-- Down Button -->					
+						<button type="button" id="target_down_arrow" class="arrowbtn btn-default" aria-label="Right Align">
+	  						<span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
+						</button>		
+					</div>
+		   		</div>
+			</div>
+    	</div>
+    	</div>
+    	</div>
+
+    	<div class="container">
+	    	<!-- Start Button -->				
+	    	<div class='col-xs-3'>	
+				<button type="button" id="start_btn"  class="btn btn-success center-block">Start</button>
+			</div>
+
+			<!-- Stop Button -->		
+	    	<div class='col-xs-3'>	
+				<button type="button" id="stop_btn"  class="btn btn-warning center-block">Shutdown</button>
+			</div>
+
+
+	    	<!-- Refresh Button -->		
+	    	<div class='col-xs-3'>	
+				<button type="button" id="refresh_btn" class="btn btn-info center-block">Refresh</button>
+			</div>
+
+			<!-- Send Button -->		
+	    	<div class='col-xs-3'>	
+				<button type="button" id="send_btn" class="btn btn-primary center-block">Send</button>
+			</div>
+
+			
+		</div>
+
+		<!-- E-Stop Button -->		
+		<div class='col-xs-8'>	
+	    	<a href="#"  data-toggle="modal" data-target="#estop_modal">
+				<button type="button" id="e_stop" class="btn btn-danger pull-right">EMERGENCY STOP	
+				</button>
+			</a>
+		</div>
+
+		<!-- E-Stop Confirmation Modal -->
+		<div class="modal fade" id="estop_modal" tabindex="-1" role="dialog"
+    		aria-labelledby="myModalLabel" aria-hidden="true">
+    		<div class="modal-dialog">
+    			<div class="modal-content">
+    				<!--Modal Header-->
+	    			<div class ="modal-header" id="modalHeader">
+	    				<button type="button" class="close" 
+	                   		data-dismiss="modal">
+	                       <span aria-hidden="true">&times;</span>
+	                       <span class="sr-only">Close</span>
+	                	</button>
+	                	<h4 class="modal-title" id="myModalLabel">
+	                   		Confirm Emergency Stop
+	                	</h4>
+	                </div>
+	                <div class ="modal-body" id="modalBody">
+	    				<span id="estop_message1">WARNING: Continuing will shut off power to the system requiring a manual restart.</span> 
+	    				<span id="estop_message2">Are you sure you want to continue?</span>
+	    			</div>
+	    			<div class="modal-footer">
+	    				<button type="button" id="cancel_estop_btn" class="btn btn-warning center-block">CANCEL</button>
+	    				<button type="button" id="continue_estop_btn" class="btn btn-danger center-block">CONTINUE FORCE STOP</button>
+	    			</div>
+	    		</div>
+    		</div>
+    	</div>
+
+
+		<script>
+		$(document).ready(function(){
+		    $('[data-toggle="popover"]').popover();
+		});
+		</script>
+
+		
+
+		
+
+    	
+	</body>
+
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

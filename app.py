@@ -10,9 +10,6 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-@app.route('/mobile')
-def mobile():
-	return render_template('mobile.html')
 
 @app.route('/xml_pop', methods=['POST'])
 def xml_pop():

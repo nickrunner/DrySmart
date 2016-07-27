@@ -1,6 +1,6 @@
 .jumbotron{
 	background-image:url('images/logo.png');
-	height: 150px;
+	height: 50px;
 	background-repeat: no-repeat;
  	background-position: center;
   	background-size: contain;
@@ -15,20 +15,19 @@
 .panel > .panel-heading {
     background-color: #2e4a9e;
     color: white;
-    height: 60px;
-    padding-bottom: 5px;
+    height: 50px;
 }
 
 .panel{
 	position: center;
-	height: 250px;
+	height: 200px;
 	border-color: Black;
 	border-width: 1px;
 	box-shadow: 5px 5px 5px #888888;
-	margin-top: 50px;
 }
 
 .panel > .panel-body{
+	position: center;
 	margin-top: 0px;
 	padding-top: 0px;
 	margin-bottom: 10px;
@@ -50,13 +49,12 @@
 
 	margin-top: 20px;
 	position: center;
-    padding: 20px 40px;
-    font-size: 50px;
+    padding: 10px 20px;
+    font-size: 20px;
     line-height: normal;
     -webkit-border-radius: 8px;
        -moz-border-radius: 8px;
             border-radius: 8px;
-    text-align: center;
 }
 
 .well{
@@ -72,46 +70,38 @@
 
 .tex{
 	font-weight: bold;
-	font-size: 30px;
+	font-size: 18px;
 	color: Black;
 }
 
 .val{
 	font-weight: bold;
-	font-size: 45px;
+	font-size: 15px;
 	color: Navy;
 }
 
 .panel_val{
-	font-size: 60px;
+	font-size: 20px;
 	color: Navy;
 	margin-bottom: 10px;
 	font-weight: bold;
 	text-align: center;
 }
 
-.glyphicon{
-	color: Navy;
-	font-size: 5.2em;
-}
-
 .arrowbtn{
-	color: Orange;
+	width: 30px;
 	text-align: center;
 	vertical-align: top;
-	height: 100px
+	color: Navy;
+	
 }
+
 
 h5{
-	font-size: 30px;
+	font-size: 15px;
 	font-weight: bold;
 	text-align: center;
-}
-
-h4{
-	font-size: 35px;
-	padding-bottom: 10px;
-	vertical-align: center;
+	padding-top: 10px; 
 }
 
 p{
@@ -124,30 +114,36 @@ p{
 	padding: 5px 10px;
 	position: right;
 	margin-left: 80px;
-	font-size: 15px;
-	margin-bottom: 20px;
 }
 
-.dropdown-menu{
-	font-size: 50px;
+#modal_btn{
+	padding: 5px 20px;
+	font-size: 20px;
 }
 
-#e_stop{
-	font-size: 35px;
+#submit_user{
+	padding: 5px 20px;
+	font-size: 20px;
 }
 
-
+#submit_alarm{
+	padding: 5px 20px;
+	font-size: 20px;
+}
 
 #notifier{
 	color: Black;
 	font-weight: bold;
-	font-size:25px;
+	font-size: 13px;
 }
 
 #smart_mode_data{
 	text-align: center;
 }
 
+#e_stop{
+	position: center;
+}
 
 .popover{
 	color: Black;
@@ -160,7 +156,7 @@ p{
 
 #clear_users{
 	padding: 5px 20px;
-	font-size: 35px;
+	font-size: 20px;
 }
 
 #estop_message1{
@@ -175,26 +171,10 @@ p{
 
 #cancel_estop_btn{
 	padding: 5px 20px;
-	font-size: 35px;
+	font-size: 20px;
 }
 
 #continue_estop_btn{
 	padding: 5px 20px;
-	font-size: 35px;
-}
-
-.modal{
-	font-size: 40px;
-}
-
-.carrier{
-	margin-top: 57px;
-}
-
-.close{
-	font-size: 25px;
-}
-
-.form-control{
-	font-size: 25px;
+	font-size: 20px;
 }
